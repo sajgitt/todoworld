@@ -1,0 +1,11 @@
+<html>
+    <title>Delete Item</title>
+    <body>
+        <h1> Delete TODO LIST Items</h1>
+        
+        <form method ="POST" action="{% url 'del_todo' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label>Are you sure you want to delete "django" ?</label>
+            <button0 type="submit" value="delete">CANCEl</button>
+            <button type="Submit" value="submit">DELETE</button>
+        </form>

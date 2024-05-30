@@ -1,0 +1,41 @@
+
+    <html>
+    <title>Add data</title>
+    <body>
+        <h1> TODO LIST</h1>
+        
+        <form method ="POST" action="{% url 'add_list' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label>Title:</label>
+            <input type="text" name="Title"><br>
+
+            {% comment %} <input type="checkbox" id="complete" name="complete" value="True/False">complete<br>
+            <input type="date" name="date"><br> {% endcomment %}
+           
+            <button type="Submit" value="submit">Add me</button>
+        </form>
+
+            
+        <table border="1" align="center:">
+            <thead>
+                <tr>
+                    <th>Title</th> 
+                    {% comment %} <th>complete</th>
+                    <th>created</th> {% endcomment %}
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in disp %}
+                <tr>
+                    
+                    <td>{{ t.Title}}</td>
+                    {% comment %} <td>{{ t.complete}}</td> {% endcomment %}
+                    {% comment %} <td>{{ t.created}}</td> {% endcomment %}
+                    
+                </tr>
+                {% endfor %}
+
+                </tbody>
+    </body>
+</html>
